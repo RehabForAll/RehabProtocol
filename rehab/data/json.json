@@ -71,7 +71,7 @@
         "limitation": "avoid reaching behind back excessively"
     }
     ],
-    "Goals": ["Full passive range of motion for shoulder fleion and internal rotation", "pain free ADLs", "90% full external rotation"],
+    "Goals": ["Full passive range of motion for shoulder flexion and internal rotation", "pain free ADLs", "90% full external rotation"],
     "Interventions": [
         {
             "name": "passive range of motion shoulder",
