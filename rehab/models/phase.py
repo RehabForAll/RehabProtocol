@@ -16,10 +16,7 @@ class Phase:
     limitations: List[str] = field(default_factory=list)
     goals: List[str] = field(default_factory=list)
     interventions: Dict = field(default_factory=dict)
-
-    @cached_property
-    def id(self):
-        return str(uuid.uuid4())
+    id: str = field(default=str(uuid.uuid4()))
 
     def add_limitation(self, limitation):
         self.limitations.append(limitation)

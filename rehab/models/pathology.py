@@ -13,10 +13,7 @@ class Pathology:
     name: str
     description: str
     phases: List[str] = field(default_factory=list)
-
-    @cached_property
-    def id(self):
-        return str(uuid.uuid4())
+    id: str = field(default=str(uuid.uuid4()))
 
     def to_json(self):
         return json.dumps(asdict(self))

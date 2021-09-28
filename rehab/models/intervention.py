@@ -16,10 +16,7 @@ class Intervention:
     video_reference: str
     equipment: str = field(default_factory=str)
     limitations: List[str] = field(default_factory=list)
-
-    @cached_property
-    def id(self):
-        return str(uuid.uuid4())
+    id: str = field(default=str(uuid.uuid4()))
 
     def add_limitation(self, limitation: str):
         self.limitations.append(limitation)
