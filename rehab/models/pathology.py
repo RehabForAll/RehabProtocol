@@ -7,7 +7,7 @@ class Pathology:
     Represents a pathology, which is initialized with a name and description.
     """
 
-    def __init__(self, name: str, description: str):
+    def __init__(self: str, name: str, description: str):
         self.id = str(uuid.uuid4())
         self.name = name
         self.description = description

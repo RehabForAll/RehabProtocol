@@ -7,13 +7,12 @@ class Phase:
     Represents a phase, which is initialized for a given pathology.
     """
 
-    def __init__(self, description, length, reference_articles, limitations=None, goals=None):
+    def __init__(self, description: str, length: str, reference_articles: int, limitations=None, goals=None):
         if limitations is None:
             limitations = []
         if goals is None:
             goals = []
 
-        self.id = str(uuid.uuid4())
         self.description = description
         self.length = length
         self.reference_articles = reference_articles

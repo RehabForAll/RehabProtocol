@@ -1,0 +1,84 @@
+{
+    "id": "8e7975c2-fc5c-4e0c-8a95-f44b6364428e",
+    "name": "Acromioclavicular Joint Reconstruction",
+    "description": "AC reconstruction is surgery to repair a ligament injury. A ligament is connective tissue that connects bones or holds a joint together. The AC is where the highest point of your shoulder bone meets your clavicle (collarbone)",
+    "phases": [
+        {
+            "description": "Phase 1",
+            "length": "5 weeks",
+            "reference_articles": 6,
+            "limitations": [
+                "No lifting shoulder over head",
+                "avoid lifting first 5 weeks"
+            ],
+            "goals": [
+                "control pain",
+                "reduce swelling",
+                "protect shoulder and surgery"
+            ],
+            "interventions": {
+                "3f14176c-1c93-4ebd-97e5-95eb2b0f6982": {
+                    "id": "3f14176c-1c93-4ebd-97e5-95eb2b0f6982",
+                    "name": "active range of motion of elbow",
+                    "description": "bending your elbow from full extension into full flexion",
+                    "equipment": "None",
+                    "times_referenced": 5,
+                    "video_reference": "https://www.youtube.com/watch?v=3RhAXHRvrKI&ab_channel=VirtualHandCare",
+                    "limitations": [
+                        "as tolerated by pain"
+                    ]
+                },
+                "82e97cc4-6012-4d38-bd28-a9417b52de4f": {
+                    "id": "82e97cc4-6012-4d38-bd28-a9417b52de4f",
+                    "name": "active range of motion of wrist",
+                    "description": "bending your wrist from full extension into full flexion",
+                    "equipment": "None",
+                    "times_referenced": 5,
+                    "video_reference": "https://www.youtube.com",
+                    "limitations": [
+                        "as tolerated by pain"
+                    ]
+                }
+            }
+        },
+        {
+            "description": "Phase 2",
+            "length": "4 weeks",
+            "reference_articles": 6,
+            "limitations": [
+                "No lifting shoulder over head",
+                "Avoid lifting first 5 weeks",
+                "Avoid reaching behind back excessively"
+            ],
+            "goals": [
+                "Full passive range of motion for shoulder flexion and internal rotation",
+                "Pain free ADLs",
+                "90% full external rotation"
+            ],
+            "interventions": {
+                "84bb4f90-d6b6-4483-b6f0-67a1c69adca7": {
+                    "id": "84bb4f90-d6b6-4483-b6f0-67a1c69adca7",
+                    "name": "passive range of motion shoulder",
+                    "description": "do the YMCA but in all planes",
+                    "equipment": "None",
+                    "times_referenced": 5,
+                    "video_reference": "https://www.youtube.com/watch?v=CSgL0qB7DEY&ab_channel=GreenredProductions-RelaxingMusic",
+                    "limitations": [
+                        "as tolerated by pain"
+                    ]
+                },
+                "ca17551e-1032-4fda-95bf-ac02341fd05b": {
+                    "id": "ca17551e-1032-4fda-95bf-ac02341fd05b",
+                    "name": "internal rotation against band",
+                    "description": "pulling band inward against band",
+                    "equipment": "None",
+                    "times_referenced": 2,
+                    "video_reference": "https://www.youtube.com/",
+                    "limitations": [
+                        "as tolerated by pain"
+                    ]
+                }
+            }
+        }
+    ]
+}
