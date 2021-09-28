@@ -1,26 +1,28 @@
 import uuid
-import jsonpickle
+import json
+from dataclasses import dataclass, asdict, field
+from functools import cached_property
+from typing import List
 
 
+@dataclass
 class Intervention:
     """
     Represents an intervention for a given Pathology
     """
+    name: str
+    description: str
+    times_referenced: int
+    video_reference: str
+    equipment: str = field(default_factory=str)
+    limitations: List[str] = field(default_factory=list)
 
-    def __init__(self, name: str, description: str, times_referenced: int, video_reference: str,
-                 equipment: str = "None", limitations=None):
-        if limitations is None:
-            limitations = []
-        self.id = str(uuid.uuid4())
-        self.name = name
-        self.description = description
-        self.equipment = equipment
-        self.times_referenced = times_referenced
-        self.video_reference = video_reference
-        self.limitations = limitations
+    @cached_property
+    def id(self):
+        return str(uuid.uuid4())
 
     def add_limitation(self, limitation: str):
         self.limitations.append(limitation)
 
     def to_json(self):
-        return jsonpickle.encode(self, make_refs=False, unpicklable=False)
+        return json.dumps(asdict(self))

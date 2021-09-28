@@ -1,8 +1,38 @@
+import os
 import unittest
 
+from rehab.models.intervention import Intervention
 from rehab.models.pathology import Pathology
 from rehab.models.phase import Phase
-from rehab.models.intervention import Intervention
+
+
+class TestPath(unittest.TestCase):
+    p1 = Pathology('my-name', 'my test description.')
+    print('P1:', p1)
+    p_id = p1.id
+    print('P1 -> id:', p_id)
+    assert p1.id == p_id, 'expected id value to be cached'
+
+    print('Serialized JSON:', p1.to_json())
+
+    # Save JSON to file
+    with open('test_file.json', 'w') as out_file:
+        out_file.write(p1.to_json())
+
+    # De-serialize object from file
+    p2 = Pathology.from_json_file('test_file')
+
+    print('P2:', p2)
+
+    # assert both objects are same
+    assert p2 == p1
+
+    # IDs should be unique, since it's automatically generated each time (we
+    # don't pass in an ID to the constructor or store it in JSON file)
+    assert p1.id != p2.id, 'expected IDs to be unique'
+
+    out_file.close()
+    os.remove('test_file.json')
 
 
 class TestModelsToJSON(unittest.TestCase):
@@ -138,14 +168,11 @@ class TestModelsFromJSON(unittest.TestCase):
 #     pathology.add_phase(phase_one)
 #     pathology.add_phase(phase_two)
 #
-#     import jsonpickle
-#
 #     # read file
 #     with open('data/test_case_1.json', 'r') as test_case_1_file:
 #         test_case_1 = test_case_1_file.read()
 #
 #     # parse file
-#     obj = jsonpickle.decode(test_case_1)
 #     assert pathology == Pathology(**obj)
 
 

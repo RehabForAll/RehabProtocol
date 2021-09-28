@@ -1,24 +1,25 @@
 import uuid
-import jsonpickle
+import json
+from dataclasses import dataclass, asdict, field
+from functools import cached_property
+from typing import List, Dict
 
 
+@dataclass
 class Phase:
     """
     Represents a phase, which is initialized for a given pathology.
     """
+    description: str
+    length: str
+    reference_articles: int
+    limitations: List[str] = field(default_factory=list)
+    goals: List[str] = field(default_factory=list)
+    interventions: Dict = field(default_factory=dict)
 
-    def __init__(self, description: str, length: str, reference_articles: int, limitations=None, goals=None):
-        if limitations is None:
-            limitations = []
-        if goals is None:
-            goals = []
-
-        self.description = description
-        self.length = length
-        self.reference_articles = reference_articles
-        self.limitations = limitations
-        self.goals = goals
-        self.interventions = {}
+    @cached_property
+    def id(self):
+        return str(uuid.uuid4())
 
     def add_limitation(self, limitation):
         self.limitations.append(limitation)
@@ -33,4 +34,4 @@ class Phase:
         self.interventions.pop(intervention_id)
 
     def to_json(self):
-        return jsonpickle.encode(self, make_refs=False, unpicklable=False)
+        return json.dumps(asdict(self))
