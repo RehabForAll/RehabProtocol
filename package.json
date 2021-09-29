@@ -2,7 +2,7 @@
   "name": "rehab-protocol",
   "version": "1.0.0",
   "description": "an app for testing / creating data to upload to dynamoDB",
-  "main": "ToPushToDynmoTest.js",
+  "main": "misc/ToPushToDynmoTest.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
